@@ -20,7 +20,8 @@ ARUCO_DICT = {
 	"DICT_7X7_1000": cv2.aruco.DICT_7X7_1000,
 	"DICT_ARUCO_ORIGINAL": cv2.aruco.DICT_ARUCO_ORIGINAL}
 tag_id = 0
+tag_size = 256
 tag_dict = cv2.aruco.Dictionary_get(ARUCO_DICT["DICT_4X4_100"])
-tag = np.zeros((200, 200), dtype=np.uint8)
-tag = cv2.aruco.drawMarker(tag_dict, tag_id, 200, tag, 1)
+tag = np.zeros((tag_size, tag_size), dtype=np.uint8)
+tag = cv2.aruco.drawMarker(tag_dict, tag_id, tag_size, tag, 1)
 cv2.imwrite("tag2.png", tag)
